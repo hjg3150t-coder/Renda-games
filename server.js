@@ -254,7 +254,7 @@ function userInfo(u) {
 async function openLive(user) {
   let live = lives.get(user);
   if (live) return live;
-  const conn = new TikTokLiveConnection(user, { enableExtendedGiftInfo: true, processInitialData: false });
+  const conn = new TikTokLiveConnection(user, { enableExtendedGiftInfo: false, processInitialData: false });
   live = { conn, sockets: new Set(), status: 'conectando' };
   lives.set(user, live);
   const room = 'live:' + user;
